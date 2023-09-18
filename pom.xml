@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>day0915-before-spring</module>
+        <module>day0915-spring-quickstart</module>
     </modules>
 
     <properties>
@@ -30,6 +31,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.26</version>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.0.11</version>
         </dependency>
     </dependencies>
 
