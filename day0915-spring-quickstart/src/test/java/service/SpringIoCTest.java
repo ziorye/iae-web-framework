@@ -2,6 +2,7 @@ package service;
 
 import dao.impl.NopeUserDao;
 import dao.impl.SimpleUserDao;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -42,11 +43,17 @@ class SpringIoCTest {
     @Test
     void initAndDestroyMethod() {
         //ac.close();
-        ac.registerShutdownHook();
+        //ac.registerShutdownHook();
+        //已由 @AfterAll 标注的方法统一处理
     }
 
     @Test
     void initializingBeanDemo() {
         Assertions.assertNotNull("控制台能看到 InitializingBeanDemo.afterPropertiesSet");
+    }
+
+    @AfterAll
+    static void registerShutdownHook() {
+        ac.registerShutdownHook();
     }
 }
