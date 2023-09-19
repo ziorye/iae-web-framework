@@ -36,4 +36,11 @@ class SpringIoCTest {
 
         Assertions.assertInstanceOf(NopeUserDao.class, userService.getUserDao2());
     }
+
+    @Test
+    void initAndDestroyMethod() {
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+        //ac.close();
+        ac.registerShutdownHook();
+    }
 }

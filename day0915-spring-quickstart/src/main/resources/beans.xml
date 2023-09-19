@@ -14,4 +14,6 @@
     </bean>
     <bean id="userDao2" class="dao.impl.NopeUserDao"/>
 
+    <bean id="initAndDestroyMethod" class="bean.InitAndDestroyMethod" init-method="init" destroy-method="destroy"/>
+
 </beans>
