@@ -22,4 +22,62 @@
 
     <bean id="beanLifecycleDemo" class="bean.BeanLifecycleDemo"/>
 
+    <bean id="otherDIDemo" class="bean.OtherDIDemo">
+        <!-- Straight Values 注入 -->
+        <property name="straightValue" value="8080"/>
+
+        <!-- 数组 注入 -->
+        <property name="array">
+            <array>
+                <value>915</value>
+                <value>916</value>
+                <value>917</value>
+            </array>
+        </property>
+
+        <!-- List 注入 -->
+        <property name="list">
+            <list>
+                <value>alice</value>
+                <value>bob</value>
+                <value>h</value>
+                <value>z</value>
+                <value>y</value>
+            </list>
+        </property>
+
+        <!-- Set 注入 -->
+        <property name="set">
+            <set>
+                <value>alice-s</value>
+                <value>bob-s</value>
+                <value>h-s</value>
+                <value>h-s</value>
+                <value>z-s</value>
+                <value>z-s</value>
+                <value>y-s</value>
+                <value>y-s</value>
+                <value>x-s</value>
+                <value>x-s</value>
+            </set>
+        </property>
+
+        <!-- Map 注入 -->
+        <property name="map">
+            <map>
+                <entry key="key1" value="value1"/>
+                <entry key="key2" value="value2"/>
+                <entry key="key3" value="value3"/>
+            </map>
+        </property>
+
+        <!-- Properties 注入 -->
+        <property name="properties">
+            <props>
+                <prop key="type">java</prop>
+                <prop key="user">admin</prop>
+                <prop key="password">secret</prop>
+            </props>
+        </property>
+    </bean>
 </beans>

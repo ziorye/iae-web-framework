@@ -66,6 +66,11 @@ class SpringIoCTest {
         );
     }
 
+    @Test
+    void otherDIDemo() {
+        Assertions.assertNotNull("控制台能看到6行「自动注入」开头的输出");
+    }
+
     @AfterAll
     static void registerShutdownHook() {
         ac.registerShutdownHook();
