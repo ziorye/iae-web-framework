@@ -9,4 +9,9 @@
 
     <bean id="userDao" class="dao.impl.SimpleUserDao"/>
 
+    <bean id="userService2" class="service.impl.UserServiceImpl">
+        <constructor-arg name="userDao2" ref="userDao2"/>
+    </bean>
+    <bean id="userDao2" class="dao.impl.NopeUserDao"/>
+
 </beans>

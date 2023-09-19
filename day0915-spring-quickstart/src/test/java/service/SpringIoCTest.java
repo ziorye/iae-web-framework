@@ -1,5 +1,6 @@
 package service;
 
+import dao.impl.NopeUserDao;
 import dao.impl.SimpleUserDao;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -25,5 +26,14 @@ class SpringIoCTest {
         UserServiceImpl userService = (UserServiceImpl) ac.getBean("userService");
 
         Assertions.assertInstanceOf(SimpleUserDao.class, userService.getUserDao());
+    }
+
+    @Test
+    void constructorBasedDependencyInjection() {
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+
+        UserServiceImpl userService = ac.getBean("userService2", UserServiceImpl.class);
+
+        Assertions.assertInstanceOf(NopeUserDao.class, userService.getUserDao2());
     }
 }
