@@ -20,4 +20,6 @@
 
     <bean id="disposableBeanDemo" class="bean.DisposableBeanDemo"/>
 
+    <bean id="beanLifecycleDemo" class="bean.BeanLifecycleDemo"/>
+
 </beans>
