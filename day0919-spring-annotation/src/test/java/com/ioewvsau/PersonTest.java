@@ -11,4 +11,12 @@ public class PersonTest {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         Assertions.assertTrue(ac.containsBean("person"));
     }
+
+    @Test
+    void personWithBeanName() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        Assertions.assertFalse(ac.containsBean("personWithBeanName"));
+        Assertions.assertTrue(ac.containsBean("specialBeanName"));
+        //Assertions.assertTrue(ac.containsBean("anotherBeanName"));
+    }
 }
