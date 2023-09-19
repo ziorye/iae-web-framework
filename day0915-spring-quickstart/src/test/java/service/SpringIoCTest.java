@@ -44,4 +44,9 @@ class SpringIoCTest {
         //ac.close();
         ac.registerShutdownHook();
     }
+
+    @Test
+    void initializingBeanDemo() {
+        Assertions.assertNotNull("控制台能看到 InitializingBeanDemo.afterPropertiesSet");
+    }
 }

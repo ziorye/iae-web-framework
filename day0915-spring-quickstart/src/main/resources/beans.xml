@@ -16,4 +16,6 @@
 
     <bean id="initAndDestroyMethod" class="bean.InitAndDestroyMethod" init-method="init" destroy-method="destroy"/>
 
+    <bean id="initializingBeanDemo" class="bean.InitializingBeanDemo"/>
+
 </beans>
