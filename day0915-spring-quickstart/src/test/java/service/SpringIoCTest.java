@@ -52,6 +52,11 @@ class SpringIoCTest {
         Assertions.assertNotNull("控制台能看到 InitializingBeanDemo.afterPropertiesSet");
     }
 
+    @Test
+    void disposableBeanDemo() {
+        Assertions.assertNotNull("控制台能看到 DisposableBeanDemo.destroy");
+    }
+
     @AfterAll
     static void registerShutdownHook() {
         ac.registerShutdownHook();

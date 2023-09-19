@@ -18,4 +18,6 @@
 
     <bean id="initializingBeanDemo" class="bean.InitializingBeanDemo"/>
 
+    <bean id="disposableBeanDemo" class="bean.DisposableBeanDemo"/>
+
 </beans>
