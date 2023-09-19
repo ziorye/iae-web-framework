@@ -1,8 +1,10 @@
 package service;
 
+import dao.impl.SimpleUserDao;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import service.impl.UserServiceImpl;
 
 class SpringIoCTest {
 
@@ -14,5 +16,14 @@ class SpringIoCTest {
         Assertions.assertTrue(ac.containsBean("userDao"));
 
         Assertions.assertFalse(ac.containsBean("otherName"));
+    }
+
+    @Test
+    void setterBasedDependencyInjection() {
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+
+        UserServiceImpl userService = (UserServiceImpl) ac.getBean("userService");
+
+        Assertions.assertInstanceOf(SimpleUserDao.class, userService.getUserDao());
     }
 }
