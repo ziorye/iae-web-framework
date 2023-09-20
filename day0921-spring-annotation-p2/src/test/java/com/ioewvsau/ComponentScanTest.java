@@ -2,6 +2,7 @@ package com.ioewvsau;
 
 import com.ioewvsau.config.DefaultFiltersConfig;
 import com.ioewvsau.config.DefaultFiltersConfig2;
+import com.ioewvsau.config.IncludeRegexFiltersConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -27,6 +28,18 @@ public class ComponentScanTest {
         assertTrue(applicationContext.containsBean("demoController"));
         assertTrue(applicationContext.containsBean("demoService"));
 
+        assertFalse(applicationContext.containsBean("demoDao"));
+    }
+
+    @Test
+    @DisplayName("测试 @ComponentScan 注解的 FilterType.REGEX 规则")
+    public void testIncludeFiltersWithRegexFilterType() {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(IncludeRegexFiltersConfig.class);
+
+        assertTrue(applicationContext.containsBean("anotherControllerWithoutAnnotation"));
+        assertTrue(applicationContext.containsBean("demoController"));
+
+        assertFalse(applicationContext.containsBean("demoService"));
         assertFalse(applicationContext.containsBean("demoDao"));
     }
 }
