@@ -26,4 +26,12 @@ public class BeanScopeConfigTest {
     public void testPrototypeScope() {
         assertNotSame(applicationContext.getBean("prototypePerson"), applicationContext.getBean("prototypePerson"));
     }
+
+    @Test
+    @DisplayName("测试单实例 Bean 的懒加载功能")
+    public void testSingletonLazy() {
+        // 真正使用 lazyPerson 之前，控制台看不到 ===lazy=== 输出
+        applicationContext.getBean("lazyPerson");
+        // 真正使用 lazyPerson 时，控制台才能看到 ===lazy=== 输出
+    }
 }

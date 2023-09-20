@@ -20,4 +20,12 @@ public class BeanScopeConfig {
     public Person prototypePerson() {
         return new Person("prototypePerson", 18);
     }
+
+    @Bean
+    @Scope("singleton")
+    @Lazy
+    public Person lazyPerson() {
+        System.out.println("===lazy===");
+        return new Person("lazyPerson", 18);
+    }
 }
