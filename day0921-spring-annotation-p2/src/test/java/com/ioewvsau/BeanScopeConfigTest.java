@@ -1,8 +1,7 @@
 package com.ioewvsau;
 
 import com.ioewvsau.config.BeanScopeConfig;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -17,6 +16,18 @@ public class BeanScopeConfigTest {
 
     @Autowired
     ApplicationContext applicationContext;
+
+    private static final ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+    @BeforeAll
+    public static void setOutputStream() {
+        System.setOut(new PrintStream(out));
+    }
+
+    @BeforeEach
+    public void resetOut() {
+        out.reset();
+    }
 
     @Test
     @DisplayName("测试单实例 Bean")
@@ -41,10 +52,6 @@ public class BeanScopeConfigTest {
     @Test
     @DisplayName("测试单实例 Bean 的懒加载功能 + 自动验证控制台输出")
     public void testSingletonLazyUsingSetOut() {
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(out);
-        System.setOut(ps);
-
         assertEquals("", out.toString());
         applicationContext.getBean("lazyPerson");
         assertEquals("===lazy===" + System.lineSeparator(), out.toString());
