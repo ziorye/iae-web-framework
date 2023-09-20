@@ -12,6 +12,7 @@
         <module>day0915-before-spring</module>
         <module>day0915-spring-quickstart</module>
         <module>day0919-spring-annotation</module>
+        <module>day0921-spring-annotation-p2</module>
     </modules>
 
     <properties>
