@@ -1,9 +1,6 @@
 package com.ioewvsau;
 
-import com.ioewvsau.config.DefaultFiltersConfig;
-import com.ioewvsau.config.DefaultFiltersConfig2;
-import com.ioewvsau.config.IncludeCustomFiltersConfig;
-import com.ioewvsau.config.IncludeRegexFiltersConfig;
+import com.ioewvsau.config.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -51,5 +48,17 @@ public class ComponentScanTest {
 
         assertTrue(applicationContext.containsBean("ioewvsauBean"));
         assertTrue(applicationContext.containsBean("ioewvsauService"));
+    }
+
+    @Test
+    @DisplayName("测试 @ComponentScan 注解的 includeFilters 规则的简化版本")
+    public void testSimplifyIncludeFiltersConfig() {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(IncludeAndExcludeFiltersConfig.class);
+
+        assertTrue(applicationContext.containsBean("demoController"));
+        assertFalse(applicationContext.containsBean("anotherControllerWithoutAnnotation"));
+
+        assertTrue(applicationContext.containsBean("demoService"));
+        assertTrue(applicationContext.containsBean("demoDao"));
     }
 }
