@@ -11,6 +11,7 @@ import static org.springframework.context.annotation.ComponentScan.*;
 @Configuration
 @ComponentScan(basePackages = "com.ioewvsau",
         includeFilters = {@Filter(Service.class), @Filter(Repository.class), @Filter(Controller.class)},
+        excludeFilters = @Filter(Controller.class),
         useDefaultFilters = false
 )
 public class IncludeAndExcludeFiltersConfig {

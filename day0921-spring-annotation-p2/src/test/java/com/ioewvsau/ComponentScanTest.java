@@ -55,7 +55,18 @@ public class ComponentScanTest {
     public void testSimplifyIncludeFiltersConfig() {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(IncludeAndExcludeFiltersConfig.class);
 
-        assertTrue(applicationContext.containsBean("demoController"));
+        assertFalse(applicationContext.containsBean("anotherControllerWithoutAnnotation"));
+
+        assertTrue(applicationContext.containsBean("demoService"));
+        assertTrue(applicationContext.containsBean("demoDao"));
+    }
+
+    @Test
+    @DisplayName("测试 @ComponentScan 注解的 excludeFilters 规则")
+    public void testExcludeFilters() {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(IncludeAndExcludeFiltersConfig.class);
+
+        assertFalse(applicationContext.containsBean("demoController"));
         assertFalse(applicationContext.containsBean("anotherControllerWithoutAnnotation"));
 
         assertTrue(applicationContext.containsBean("demoService"));
