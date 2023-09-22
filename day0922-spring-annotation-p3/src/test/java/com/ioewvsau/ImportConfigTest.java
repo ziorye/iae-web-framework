@@ -26,4 +26,10 @@ public class ImportConfigTest {
     public void testCustomImportSelector() {
         assertTrue(applicationContext.containsBean("com.ioewvsau.atImport.Banana"));
     }
+
+    @Test
+    @DisplayName("测试使用 @Import 注解通过 ImportBeanDefinitionRegistrar 注入")
+    public void testCustomImportBeanDefinitionRegistrar() {
+        assertTrue(applicationContext.containsBean("dog"));
+    }
 }
