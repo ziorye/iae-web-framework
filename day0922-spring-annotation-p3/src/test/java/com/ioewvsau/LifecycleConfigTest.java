@@ -1,6 +1,7 @@
 package com.ioewvsau;
 
 import com.ioewvsau.lifecycle.LifecycleConfig;
+import com.ioewvsau.lifecycle.LifecycleConfigJSR250;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -42,6 +43,27 @@ public class LifecycleConfigTest {
                 "...constructor..." + System.lineSeparator() +
                         "...initMethod..." + System.lineSeparator() +
                         "...destroyMethod..." + System.lineSeparator(),
+                out.toString()
+        );
+    }
+
+    @Test
+    @DisplayName("测试 Lifecycle Callbacks - JSR250 @PostConstruct 和 @PreDestroy")
+    public void testUsingPostConstructAndPreDestroyAnnotation() {
+        AbstractApplicationContext applicationContext = new AnnotationConfigApplicationContext(LifecycleConfigJSR250.class);
+
+        assertEquals(
+                "...constructor..." + System.lineSeparator() +
+                        "...PostConstruct..." + System.lineSeparator(),
+                out.toString()
+        );
+
+        applicationContext.close();
+
+        assertEquals(
+                "...constructor..." + System.lineSeparator() +
+                        "...PostConstruct..." + System.lineSeparator() +
+                        "...PreDestroy..." + System.lineSeparator(),
                 out.toString()
         );
     }
