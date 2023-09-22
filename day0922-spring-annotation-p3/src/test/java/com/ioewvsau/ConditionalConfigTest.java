@@ -12,18 +12,22 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringJUnitConfig(ConditionalConfig.class)
 public class ConditionalConfigTest {
+    static {
+        System.setProperty("os.name", "Windows 11");
+    }
+
     @Autowired
     ApplicationContext applicationContext;
 
     @Test
     @DisplayName("测试 WindowsCondition")
     public void testWindowsCondition() {
-        assertFalse(applicationContext.containsBean("windowsPerson"));
+        assertTrue(applicationContext.containsBean("windowsPerson"));
     }
 
     @Test
     @DisplayName("测试 MacCondition")
     public void testMacCondition() {
-        assertTrue(applicationContext.containsBean("macPerson"));
+        assertFalse(applicationContext.containsBean("macPerson"));
     }
 }
