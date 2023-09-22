@@ -19,7 +19,11 @@ public class ImportConfigTest {
     public void testImportRegularClasses() {
         assertTrue(applicationContext.containsBean("com.ioewvsau.atImport.Apple"));
         assertTrue(applicationContext.containsBean("com.ioewvsau.atImport.Cat"));
+    }
 
-        assertFalse(applicationContext.containsBean("com.ioewvsau.atImport.Banana"));
+    @Test
+    @DisplayName("测试使用 @Import 注解通过 ImportSelector 注入")
+    public void testCustomImportSelector() {
+        assertTrue(applicationContext.containsBean("com.ioewvsau.atImport.Banana"));
     }
 }
