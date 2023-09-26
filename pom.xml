@@ -16,6 +16,7 @@
         <module>day0922-spring-annotation-p3</module>
         <module>day0925-mybatis-review</module>
         <module>day0925-spring-mybatis</module>
+        <module>day0926-x-spring-aop</module>
     </modules>
 
     <properties>
