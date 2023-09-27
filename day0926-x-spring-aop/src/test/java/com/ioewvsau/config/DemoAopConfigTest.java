@@ -21,4 +21,12 @@ class DemoAopConfigTest {
 
         userDao.update();
     }
+
+    @Test
+    void elapsedTimeUsingAtAround() {
+        AbstractApplicationContext applicationContext = new AnnotationConfigApplicationContext(DemoAopConfig.class);
+        UserDao userDao = applicationContext.getBean(UserDao.class);
+
+        userDao.delete();
+    }
 }
