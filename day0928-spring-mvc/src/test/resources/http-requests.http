@@ -26,3 +26,6 @@ Accept: application/json
 GET http://localhost:8080/day0928_spring_mvc_war/response/page
 Accept: application/xhtml+xml
 
+### response/text
+GET http://localhost:8080/day0928_spring_mvc_war/response/text
+
