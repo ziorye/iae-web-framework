@@ -17,4 +17,10 @@ public class UserController {
         userService.save();
         return "UserController@register";
     }
+
+    @RequestMapping("/user/param")
+    @ResponseBody
+    String param(String name, String email) {
+        return "UserController@param---" + name + ", " + email;
+    }
 }
