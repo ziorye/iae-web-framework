@@ -1,5 +1,6 @@
 package com.ioewvsau.controller;
 
+import com.ioewvsau.pojo.User;
 import com.ioewvsau.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,5 +30,11 @@ public class UserController {
     @ResponseBody
     String paramNotMatch(@RequestParam("name") String userName, String email) {
         return "UserController@paramNotMatch---" + userName + ", " + email;
+    }
+
+    @RequestMapping("/user/param-pojo")
+    @ResponseBody
+    String paramPojo(User user) {
+        return "UserController@paramPojo---" + user;
     }
 }
