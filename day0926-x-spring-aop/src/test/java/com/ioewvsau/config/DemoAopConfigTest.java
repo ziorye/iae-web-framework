@@ -13,4 +13,12 @@ class DemoAopConfigTest {
 
         userDao.retrieve();
     }
+
+    @Test
+    void endTimeUsingAtAfter() {
+        AbstractApplicationContext applicationContext = new AnnotationConfigApplicationContext(DemoAopConfig.class);
+        UserDao userDao = applicationContext.getBean(UserDao.class);
+
+        userDao.update();
+    }
 }
