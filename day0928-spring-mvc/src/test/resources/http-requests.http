@@ -33,3 +33,7 @@ GET http://localhost:8080/day0928_spring_mvc_war/response/text
 ### response/json
 GET http://localhost:8080/day0928_spring_mvc_war/response/json
 Accept: application/json
+
+### response/jsonList
+GET http://localhost:8080/day0928_spring_mvc_war/response/jsonList
+Accept: application/json
