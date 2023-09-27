@@ -17,6 +17,7 @@
         <module>day0925-mybatis-review</module>
         <module>day0925-spring-mybatis</module>
         <module>day0926-x-spring-aop</module>
+        <module>day0927-spring-transaction</module>
     </modules>
 
     <properties>
