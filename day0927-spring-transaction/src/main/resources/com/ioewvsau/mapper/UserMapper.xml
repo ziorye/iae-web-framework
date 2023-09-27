@@ -8,6 +8,10 @@
 		select * from user where id = #{id}
 	</select>
 
+	<select id="selectUsersByName" resultType="User">
+		select * from user where name = #{name}
+	</select>
+
 	<insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
 		insert into user (name,balance)
 		values (#{name},#{balance})
