@@ -1,6 +1,7 @@
 package com.ioewvsau;
 
 import com.ioewvsau.config.MyWebConfig;
+import com.ioewvsau.config.MyRootConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -10,7 +11,7 @@ public class MyWebApplicationInitializer extends AbstractAnnotationConfigDispatc
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return null;
+        return new Class[] {MyRootConfig.class};
     }
 
     @Override
