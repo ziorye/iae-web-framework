@@ -18,6 +18,7 @@
         <module>day0925-spring-mybatis</module>
         <module>day0926-x-spring-aop</module>
         <module>day0927-spring-transaction</module>
+        <module>day0928-spring-mvc</module>
     </modules>
 
     <properties>
