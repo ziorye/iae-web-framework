@@ -19,6 +19,11 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
+    public List<Post> getByPage(int rowCount, int offset) {
+        return postMapper.selectByPage(rowCount, offset);
+    }
+
+    @Override
     public Post getById(long id) {
         return postMapper.selectById(id);
     }

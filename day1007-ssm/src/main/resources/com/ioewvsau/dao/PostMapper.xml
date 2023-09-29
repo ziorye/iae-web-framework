@@ -18,6 +18,9 @@
 	<select id="selectAll" resultMap="postResultMap">
 		select * from post;
 	</select>
+	<select id="selectByPage" resultMap="postResultMap">
+		select * from post limit #{rowCount} offset #{offset} ;
+	</select>
 	<!--<select id="selectById" parameterType="long" resultMap="postResultMap">-->
 	<!--<select id="selectById" resultMap="postResultMap">
 		select *

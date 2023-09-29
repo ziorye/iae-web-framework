@@ -12,6 +12,8 @@ import java.util.Map;
 public interface PostMapper {
     List<Post> selectAll();
 
+    List<Post> selectByPage(@Param("rowCount") int rowCount, @Param("offset") int offset);
+
     @Select("select * from post where id = #{id}")
     Post selectById(long id);
 

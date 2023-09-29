@@ -16,8 +16,10 @@ public class PostController {
     PostService postService;
 
     @GetMapping
-    List<Post> index() {
-        return postService.getAll();
+    List<Post> index(@RequestParam(value = "page", defaultValue = "1") int page,
+                     @RequestParam(value = "perPage", defaultValue = "10") int perPage)
+    {
+        return postService.getByPage(perPage, (page - 1) * perPage);
     }
 
     @PostMapping

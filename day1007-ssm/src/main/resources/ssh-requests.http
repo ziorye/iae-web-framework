@@ -6,6 +6,10 @@
 GET http://localhost:8080/day1007_ssm_war/posts
 Accept: application/json
 
+### posts.index by page
+GET http://localhost:8080/day1007_ssm_war/posts?page=2&perPage=3
+Accept: application/json
+
 ### posts.store
 POST http://localhost:8080/day1007_ssm_war/posts
 Content-Type: application/json
