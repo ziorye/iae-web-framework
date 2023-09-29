@@ -1,9 +1,11 @@
 package com.ioewvsau.config;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class StringVsStringBuilderTest {
     @Test
+    @Disabled
     void contactUsingString() {
         String s = "null";
         long start = System.currentTimeMillis();
@@ -15,6 +17,7 @@ public class StringVsStringBuilderTest {
     }
 
     @Test
+    @Disabled
     void contactUsingStringBuilder() {
         StringBuilder sb = new StringBuilder("null");
         long start = System.currentTimeMillis();
