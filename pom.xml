@@ -21,6 +21,7 @@
         <module>day0928-spring-mvc</module>
         <module>day1007-ssm</module>
         <module>day1007-fileupload-servlet</module>
+        <module>day1007-fileupload-springmvc</module>
     </modules>
 
     <properties>
