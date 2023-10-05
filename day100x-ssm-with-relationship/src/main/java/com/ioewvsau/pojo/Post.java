@@ -17,4 +17,6 @@ public class Post {
     int viewCount;
     Date createdAt;
     Date updatedAt;
+
+    User user;
 }

@@ -1,0 +1,11 @@
+### ============================
+### posts
+### ============================
+
+### posts.index
+GET http://localhost:8080/day100x_ssm_with_relationship_war/posts
+Accept: application/json
+
+### posts.index by page
+GET http://localhost:8080/day100x_ssm_with_relationship_war/posts?page=2&perPage=3
+Accept: application/json
