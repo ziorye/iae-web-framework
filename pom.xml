@@ -20,6 +20,7 @@
         <module>day0927-spring-transaction</module>
         <module>day0928-spring-mvc</module>
         <module>day1007-ssm</module>
+        <module>day1007-fileupload-servlet</module>
     </modules>
 
     <properties>
