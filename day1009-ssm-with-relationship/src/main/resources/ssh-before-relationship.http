@@ -3,15 +3,15 @@
 ### ============================
 
 ### users.index
-GET http://localhost:8080/day100x_ssm_with_relationship_war/users
+GET http://localhost:8080/day1009_ssm_with_relationship_war/users
 Accept: application/json
 
 ### users.index by page
-GET http://localhost:8080/day100x_ssm_with_relationship_war/users?page=2&perPage=1
+GET http://localhost:8080/day1009_ssm_with_relationship_war/users?page=2&perPage=1
 Accept: application/json
 
 ### users.store
-POST http://localhost:8080/day100x_ssm_with_relationship_war/users
+POST http://localhost:8080/day1009_ssm_with_relationship_war/users
 Content-Type: application/json
 
 {
@@ -22,11 +22,11 @@ Content-Type: application/json
 }
 
 ### users.show
-GET http://localhost:8080/day100x_ssm_with_relationship_war/users/3
+GET http://localhost:8080/day1009_ssm_with_relationship_war/users/3
 Accept: application/json
 
 ### users.update
-PUT http://localhost:8080/day100x_ssm_with_relationship_war/users/3
+PUT http://localhost:8080/day1009_ssm_with_relationship_war/users/3
 Content-Type: application/json
 
 {
@@ -35,7 +35,7 @@ Content-Type: application/json
 }
 
 ### users.delete
-DELETE http://localhost:8080/day100x_ssm_with_relationship_war/users/3
+DELETE http://localhost:8080/day1009_ssm_with_relationship_war/users/3
 Content-Type: application/json
 
 
@@ -50,15 +50,15 @@ Content-Type: application/json
 ### ============================
 
 ### posts.index
-GET http://localhost:8080/day100x_ssm_with_relationship_war/posts
+GET http://localhost:8080/day1009_ssm_with_relationship_war/posts
 Accept: application/json
 
 ### posts.index by page
-GET http://localhost:8080/day100x_ssm_with_relationship_war/posts?page=2&perPage=3
+GET http://localhost:8080/day1009_ssm_with_relationship_war/posts?page=2&perPage=3
 Accept: application/json
 
 ### posts.store
-POST http://localhost:8080/day100x_ssm_with_relationship_war/posts
+POST http://localhost:8080/day1009_ssm_with_relationship_war/posts
 Content-Type: application/json
 
 {
@@ -72,11 +72,11 @@ Content-Type: application/json
 }
 
 ### posts.show
-GET http://localhost:8080/day100x_ssm_with_relationship_war/posts/11
+GET http://localhost:8080/day1009_ssm_with_relationship_war/posts/11
 Accept: application/json
 
 ### posts.update
-PUT http://localhost:8080/day100x_ssm_with_relationship_war/posts/11
+PUT http://localhost:8080/day1009_ssm_with_relationship_war/posts/11
 Content-Type: application/json
 
 {
@@ -85,5 +85,5 @@ Content-Type: application/json
 }
 
 ### posts.delete
-DELETE http://localhost:8080/day100x_ssm_with_relationship_war/posts/11
+DELETE http://localhost:8080/day1009_ssm_with_relationship_war/posts/11
 Content-Type: application/json
