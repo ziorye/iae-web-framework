@@ -15,7 +15,7 @@ import java.io.IOException;
 public class FileUploadController {
     @GetMapping("/")
     String index() {
-        return "/index.jsp";
+        return "index";
     }
 
     @PostMapping("/fileUploadController")
