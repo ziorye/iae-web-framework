@@ -19,7 +19,7 @@ public class FileUploadController {
     }
 
     @PostMapping("/fileUploadController")
-    @ResponseBody
+    //@ResponseBody
     String upload(@RequestParam("description") String description,
                   @RequestParam("avatar") MultipartFile avatar, HttpSession session) throws IOException {
 
@@ -31,6 +31,9 @@ public class FileUploadController {
             avatar.transferTo(new File(pathAndFileName));
         }
 
-        return "description=" + description + ", pathAndFileName=" + pathAndFileName;
+        //return "description=" + description + ", pathAndFileName=" + pathAndFileName;
+
+        System.out.println("description=" + description + ", pathAndFileName=" + pathAndFileName);
+        return "redirect:" + filename;
     }
 }
