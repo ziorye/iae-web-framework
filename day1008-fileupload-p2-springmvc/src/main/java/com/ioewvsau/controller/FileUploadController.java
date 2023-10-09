@@ -1,5 +1,6 @@
 package com.ioewvsau.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,5 +36,17 @@ public class FileUploadController {
 
         System.out.println("description=" + description + ", pathAndFileName=" + pathAndFileName);
         return "redirect:" + filename;
+    }
+
+    @GetMapping("/testForward")
+    String forward(HttpServletRequest request) {
+        request.setAttribute("fromForwardAttribute", "fromForwardAttribute-Value");
+        return "forward:/forwardTarget";
+    }
+
+    @GetMapping("/forwardTarget")
+    @ResponseBody
+    String forwardTarget(HttpServletRequest request) {
+        return "fromForwardAttribute=" + request.getAttribute("fromForwardAttribute");
     }
 }
