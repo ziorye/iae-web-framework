@@ -35,14 +35,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean update(User user) {
-        userMapper.update(user);
-        return true;
+    public int update(User user) {
+        return userMapper.update(user);
     }
 
     @Override
-    public boolean deleteById(long id) {
-        userMapper.deleteById(id);
-        return true;
+    public int deleteById(long id) {
+        return userMapper.deleteById(id);
     }
 }

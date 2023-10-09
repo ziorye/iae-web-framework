@@ -29,9 +29,9 @@ public interface PostMapper {
 
     void add(Post post);
 
-    void update(Post post);
+    int update(Post post);
 
-    void deleteById(long id);
+    int deleteById(long id);
 
-    void deleteByIds(long[] ids);
+    int deleteByIds(long[] ids);
 }

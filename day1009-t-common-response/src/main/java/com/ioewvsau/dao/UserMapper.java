@@ -24,11 +24,11 @@ public interface UserMapper {
 
     void add(User user);
 
-    void update(User user);
+    int update(User user);
 
-    void deleteById(long id);
+    int deleteById(long id);
 
-    void deleteByIds(long[] ids);
+    int deleteByIds(long[] ids);
 
     @Update("TRUNCATE TABLE USER")
     void truncate();

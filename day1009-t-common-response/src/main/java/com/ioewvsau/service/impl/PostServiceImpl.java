@@ -35,14 +35,12 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public boolean update(Post post) {
-        postMapper.update(post);
-        return true;
+    public int update(Post post) {
+        return postMapper.update(post);
     }
 
     @Override
-    public boolean deleteById(long id) {
-        postMapper.deleteById(id);
-        return true;
+    public int deleteById(long id) {
+        return postMapper.deleteById(id);
     }
 }

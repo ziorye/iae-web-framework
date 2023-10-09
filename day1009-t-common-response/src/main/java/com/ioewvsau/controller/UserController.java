@@ -2,7 +2,9 @@ package com.ioewvsau.controller;
 
 import com.ioewvsau.pojo.User;
 import com.ioewvsau.service.UserService;
+import com.ioewvsau.util.CommonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,31 +16,37 @@ public class UserController {
     UserService userService;
 
     @GetMapping
-    List<User> index(@RequestParam(value = "page", defaultValue = "1") int page,
-                     @RequestParam(value = "perPage", defaultValue = "10") int perPage)
+    CommonResponse index(@RequestParam(value = "page", defaultValue = "1") int page,
+                         @RequestParam(value = "perPage", defaultValue = "10") int perPage)
     {
-        return userService.getByPage(perPage, (page - 1) * perPage);
+        List<User> data = userService.getByPage(perPage, (page - 1) * perPage);
+        return CommonResponse.ok(data);
     }
 
     @PostMapping
-    void store(@RequestBody User user) {
+    CommonResponse store(@RequestBody User user) {
         userService.save(user);
+        return CommonResponse.ok(HttpStatus.CREATED.value(), HttpStatus.CREATED.getReasonPhrase());
     }
 
     @GetMapping("/{id}")
-    User show(@PathVariable long id) {
-        return userService.getById(id);
+    CommonResponse show(@PathVariable long id) {
+        User data = userService.getById(id);
+        return CommonResponse.ok(data == null ? HttpStatus.NOT_FOUND.value() : HttpStatus.OK.value(), data);
     }
 
     @PutMapping("/{id}")
-    void update(@PathVariable long id, @RequestBody User user) {
+    CommonResponse update(@PathVariable long id, @RequestBody User user) {
         user.setId(id);
-        userService.update(user);
+        int result = userService.update(user);
+        return CommonResponse.ok(result == 0 ? HttpStatus.NOT_FOUND.value() : HttpStatus.OK.value(), result);
+
     }
 
     @DeleteMapping("/{id}")
-    void delete(@PathVariable long id) {
-        userService.deleteById(id);
+    CommonResponse delete(@PathVariable long id) {
+        int result = userService.deleteById(id);
+        return CommonResponse.ok(result == 0 ? HttpStatus.NOT_FOUND.value() : HttpStatus.OK.value(), result);
     }
 
 }

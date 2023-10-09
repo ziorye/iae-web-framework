@@ -13,7 +13,7 @@ public interface PostService {
 
     boolean save(Post post);
 
-    boolean update(Post post);
+    int update(Post post);
 
-    boolean deleteById(long id);
+    int deleteById(long id);
 }
