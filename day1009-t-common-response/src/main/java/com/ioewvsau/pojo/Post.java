@@ -1,5 +1,6 @@
 package com.ioewvsau.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.util.Date;
@@ -18,5 +19,6 @@ public class Post {
     Date createdAt;
     Date updatedAt;
 
+    @JsonIgnore
     User user;
 }
