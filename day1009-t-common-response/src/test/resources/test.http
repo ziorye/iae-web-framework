@@ -108,3 +108,30 @@ Accept: application/json
 ### demo.j
 GET http://localhost:8080/day1009_t_common_response_war/demo/j
 Accept: application/json
+
+
+
+### ============================
+### test validation
+### ============================
+
+### users.store without name
+POST http://localhost:8080/day1009_t_common_response_war/users
+Content-Type: application/json
+
+{
+  "email": "new@example.com",
+  "password": "$2a$10$X/uMNuiis.fyO47cxbta3OSs2sllSeLcwVfC0.ghyxeVVZRmAbzk2",
+  "status": 1
+}
+
+### users.store unexpected size
+POST http://localhost:8080/day1009_t_common_response_war/users
+Content-Type: application/json
+
+{
+  "name": "ab",
+  "email": "new@example.com",
+  "password": "$2a$10$X/uMNuiis.fyO47cxbta3OSs2sllSeLcwVfC0.ghyxeVVZRmAbzk2",
+  "status": 1
+}
