@@ -146,3 +146,14 @@ Content-Type: application/json
   "password": "$2a$10$X/uMNuiis.fyO47cxbta3OSs2sllSeLcwVfC0.ghyxeVVZRmAbzk2",
   "status": 1
 }
+
+### users.store @JsonIgnore -> JsonProperty.Access.WRITE_ONLY
+POST http://localhost:8080/day1009_t_common_response_war/users
+Content-Type: application/json
+
+{
+  "name": "alice",
+  "email": "alice@example.com",
+  "password": "secret",
+  "status": 1
+}
