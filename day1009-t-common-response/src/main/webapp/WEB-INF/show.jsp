@@ -11,5 +11,6 @@
 </head>
 <body>
 <h1>registry.jsp();</h1>
+<p>${msg}</p>
 </body>
 </html>
