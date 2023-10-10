@@ -25,6 +25,7 @@
         <module>day1009-ssm-with-relationship</module>
         <module>day1009-t-common-response-p1</module>
         <module>day1010-common-response-p2</module>
+        <module>day1011-servlet-containerInitializer</module>
     </modules>
 
     <properties>
