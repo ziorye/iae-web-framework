@@ -23,7 +23,7 @@
         <module>day1008-fileupload-p1-servlet</module>
         <module>day1008-fileupload-p2-springmvc</module>
         <module>day1009-ssm-with-relationship</module>
-        <module>day1009-t-common-response</module>
+        <module>day1009-t-common-response-p1</module>
     </modules>
 
     <properties>
