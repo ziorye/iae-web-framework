@@ -25,4 +25,10 @@ public class DemoController {
         }
         return R.ok();
     }
+
+    @GetMapping("/i")
+    R i() {
+        System.out.println("DemoController.i");
+        return R.ok();
+    }
 }
