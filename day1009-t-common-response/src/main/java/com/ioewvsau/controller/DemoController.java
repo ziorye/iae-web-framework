@@ -31,4 +31,10 @@ public class DemoController {
         System.out.println("DemoController.i");
         return R.ok();
     }
+
+    @GetMapping("/j")
+    R j() {
+        System.out.println("DemoController.j");
+        return R.ok();
+    }
 }

@@ -14,6 +14,8 @@ public class MyServletConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //registry.addInterceptor(new MyInterceptor());
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/demo/i");
+        //registry.addInterceptor(new MyInterceptor()).addPathPatterns("/demo/i");
+        // * 一层；** 多层
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/demo/**").excludePathPatterns("/demo/i");
     }
 }

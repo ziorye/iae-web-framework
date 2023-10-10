@@ -104,3 +104,7 @@ Accept: application/json
 ### demo.i
 GET http://localhost:8080/day1009_t_common_response_war/demo/i
 Accept: application/json
+
+### demo.j
+GET http://localhost:8080/day1009_t_common_response_war/demo/j
+Accept: application/json
