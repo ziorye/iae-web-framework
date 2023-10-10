@@ -92,3 +92,11 @@ Content-Type: application/json
 ### demo.e
 GET http://localhost:8080/day1009_t_common_response_war/demo/e
 Accept: application/json
+
+### demo.be
+GET http://localhost:8080/day1009_t_common_response_war/demo/e/0
+Accept: application/json
+
+### demo.se
+GET http://localhost:8080/day1009_t_common_response_war/demo/e/99
+Accept: application/json
