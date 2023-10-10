@@ -18,6 +18,10 @@ public class R {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Object data;
 
+    public static R ok() {
+        return new R(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), null);
+    }
+
     public static R ok(Object data) {
         return new R(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), data);
     }

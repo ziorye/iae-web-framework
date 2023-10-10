@@ -82,3 +82,13 @@ Content-Type: application/json
 ### users.delete
 DELETE http://localhost:8080/day1009_t_common_response_war/users/3
 Content-Type: application/json
+
+
+
+### ============================
+### demo
+### ============================
+
+### demo.e
+GET http://localhost:8080/day1009_t_common_response_war/demo/e
+Accept: application/json
