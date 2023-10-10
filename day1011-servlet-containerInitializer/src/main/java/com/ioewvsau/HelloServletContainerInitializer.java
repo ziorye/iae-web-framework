@@ -1,9 +1,10 @@
 package com.ioewvsau;
 
+import com.ioewvsau.filter.CustomFilter;
+import com.ioewvsau.listener.CustomListener;
 import com.ioewvsau.service.HelloService;
-import jakarta.servlet.ServletContainerInitializer;
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
+import com.ioewvsau.servlet.CustomServlet;
+import jakarta.servlet.*;
 import jakarta.servlet.annotation.HandlesTypes;
 
 import java.util.Set;
@@ -17,5 +18,16 @@ public class HelloServletContainerInitializer implements ServletContainerInitial
         for (Class<?> hs : c) {
             System.out.println(hs);
         }
+
+        // add Servlet
+        ServletRegistration.Dynamic cs = ctx.addServlet("cs", new CustomServlet());
+        cs.addMapping("/cs");
+
+        // add Filter
+        FilterRegistration.Dynamic cf = ctx.addFilter("cf", new CustomFilter());
+        cf.addMappingForUrlPatterns(null, true, "/cs");
+
+        // add Listener
+        ctx.addListener(CustomListener.class);
     }
 }
