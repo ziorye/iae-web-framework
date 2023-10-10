@@ -16,7 +16,7 @@ public class User {
 	@Size(min = 3, max = 20)
 	private String name;
 
-	@Email
+	@Email(message = "The string has to be a well-formed email address")
 	private String email;
 
 	@JsonIgnore
